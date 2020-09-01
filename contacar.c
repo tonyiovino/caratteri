@@ -5,8 +5,6 @@ int main()
   int c;
   int count;
 
-  printf("Dimmi qualcosa: ");
-
   while ( (c = getchar()) != EOF ) { 
     putchar(c);
     count++;
