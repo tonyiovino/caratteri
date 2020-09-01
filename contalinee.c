@@ -3,17 +3,16 @@
 int main()
 {
   int c;
-  int count;
+  int count = 0;
 
   while ( (c = getchar()) != EOF ) { 
-
-    putchar(c);
-    count++;
+    if (c == '\n') {
+      count++;
+    }
   }
   putchar('\n');
   putchar('\n');
-
-  printf("Caratteri Inseriti: %d\n", count);
+  printf("New line Inserite: %d\n", count);
 
   return 0;
 }
