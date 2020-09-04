@@ -22,7 +22,7 @@ int main()
     }
 
     if (c >= '0' && c <= '9') {
-      num[c]++;
+      num[c-'0']++;
     }
 
     count_car++;
