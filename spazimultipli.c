@@ -1,3 +1,17 @@
+/*
+  Stato       Input            Output         Nuovo Stato
+    NORM      c==' '             c               SPAZIO
+              
+            
+
+    NORM      c!=' '             c                NORM
+
+
+
+    SPAZIO    c!=' '             c                NORM
+
+*/
+
 #include <stdio.h>
 
 int main()
