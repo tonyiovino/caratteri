@@ -4,6 +4,13 @@
 
    NORM       c!='/'              c                -
 
+   NORM       c=='"'              -             STRINGA
+
+
+  STRINGA     c=='"'              c              NORM
+
+  STRINGA     c!='"'              c                -
+
 
    SLASH      c=='*'              -            COMMENTO
 
