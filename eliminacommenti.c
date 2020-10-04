@@ -44,7 +44,8 @@ int main()
         stato = COMMENTO;
       }
       else {
-        putchar('/' + c);
+        putchar('/');
+        putchar(c);
         stato = NORM;
       }
     }
