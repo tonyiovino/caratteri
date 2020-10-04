@@ -1,15 +1,15 @@
 /*
   Stato       Input            Output         Nuovo Stato
     DENTRO   c==' '    \
-              oppure    - - > count_parole++       FUORI
+              oppure    - - > count_parole++     FUORI
              c=='\n'   /
 
     DENTRO   c!=' '    \
-                e       - - >   Nulla             DENTRO
+                e       - - >   Nulla            DENTRO
              c!='\n'   /
 
     FUORI    c!=' '    \
-                e       - - >   Nulla             DENTRO
+                e       - - >   Nulla            DENTRO
              c!='\n'   /
 */
 

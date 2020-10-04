@@ -1,11 +1,11 @@
 /*
-  Stato       Input            Output        Nuovo Stato
+  Stato       Input            Output         Nuovo Stato
     DENTRO   c==' '    \
-              oppure    - - >   '\n'            DENTRO
+              oppure    - - >   '\n'             DENTRO
              c=='\n'   /
 
     DENTRO   c!=' '    \
-                e       - - >     c               -
+                e       - - >     c                -
              c!='\n'   /
 */
 
