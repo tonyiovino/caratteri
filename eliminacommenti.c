@@ -39,7 +39,7 @@ int main()
       }
     }
 
-    if (stato == SLASH){
+    else if (stato == SLASH){
       if (c == '*'){
         stato = COMMENTO;
       }
@@ -50,13 +50,13 @@ int main()
       }
     }
 
-    if (stato == COMMENTO){
+    else if (stato == COMMENTO){
       if (c == '*'){
         stato = ASTERISCO;
       }
     }
 
-    if (stato == ASTERISCO){
+    else if (stato == ASTERISCO){
       if (c == '/'){
         stato = NORM;
       }
