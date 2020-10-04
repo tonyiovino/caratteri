@@ -4,7 +4,7 @@
 
    NORM       c!='/'              c                -
 
-   NORM       c=='"'              -             STRINGA
+   NORM       c=='"'              c             STRINGA
 
 
   STRINGA     c=='"'              c              NORM
@@ -14,7 +14,7 @@
 
    SLASH      c=='*'              -            COMMENTO
 
-   SLASH      c!='*'            '/'+c            NORM
+   SLASH      c!='*'            '/'+c              -
 
 
   COMMENTO    c=='*'              -            ASTERISCO
@@ -31,7 +31,7 @@
 
 int main()
 {
-  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO };
+  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO, STRINGA };
 
   int stato = NORM;
   int c;
@@ -40,6 +40,20 @@ int main()
     if (stato == NORM){
       if (c == '/'){
         stato = SLASH;
+      }
+      else if (c == '"'){
+        putchar(c);
+        stato = STRINGA;
+      }
+      else {
+        putchar(c);
+      }
+    }
+
+    else if (stato == STRINGA){
+      if (c == '"'){
+        putchar(c);
+        stato = NORM;
       }
       else {
         putchar(c);
