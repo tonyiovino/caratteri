@@ -7,7 +7,7 @@
 
    SLASH      c=='*'              -            COMMENTO
 
-   SLASH      c!='*'              c              NORM
+   SLASH      c!='*'            '/'+c            NORM
 
 
   COMMENTO    c=='*'              -            ASTERISCO
