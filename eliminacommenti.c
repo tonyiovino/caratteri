@@ -30,7 +30,7 @@ int main()
   int c;
 
   while ( (c = getchar()) != EOF ){
-    if (stato = NORM){
+    if (stato == NORM){
       if (c == '/'){
         stato = SLASH;
       }
@@ -39,7 +39,7 @@ int main()
       }
     }
 
-    if (stato = SLASH){
+    if (stato == SLASH){
       if (c == '*'){
         stato = COMMENTO;
       }
@@ -50,13 +50,13 @@ int main()
       }
     }
 
-    if (stato = COMMENTO){
+    if (stato == COMMENTO){
       if (c == '*'){
         stato = ASTERISCO;
       }
     }
 
-    if (stato = ASTERISCO){
+    if (stato == ASTERISCO){
       if (c == '/'){
         stato = NORM;
       }
