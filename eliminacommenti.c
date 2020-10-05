@@ -11,8 +11,10 @@
 
   STRINGA     c!='"'              c                -
 
+  STRINGA     c=='\'              c                -
 
-   SLASH      c=='*'              -            COMMENTO
+
+   SLASH      c=='*'              -             COMMENTO
 
    SLASH      c!='*'            '/'+c              -
 
@@ -31,12 +33,14 @@
 
 int main()
 {
-  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO, STRINGA };
+  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO, STRINGA, BACKSLASH };
 
   int stato = NORM;
   int c;
 
   while ( (c = getchar()) != EOF ){
+
+    /*NORM*/
     if (stato == NORM){
       if (c == '/'){
         stato = SLASH;
@@ -50,16 +54,21 @@ int main()
       }
     }
 
+    /*STRINGA*/
     else if (stato == STRINGA){
       if (c == '"'){
         putchar(c);
         stato = NORM;
+      }
+      else if (c=='\\'){
+        putchar(c);
       }
       else {
         putchar(c);
       }
     }
 
+    /*SLASH*/
     else if (stato == SLASH){
       if (c == '*'){
         stato = COMMENTO;
@@ -71,12 +80,14 @@ int main()
       }
     }
 
+    /*COMMENTO*/
     else if (stato == COMMENTO){
       if (c == '*'){
         stato = ASTERISCO;
       }
     }
 
+    /*ASTERISCO*/
     else if (stato == ASTERISCO){
       if (c == '/'){
         stato = NORM;
