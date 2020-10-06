@@ -60,7 +60,8 @@ int main()
         putchar(c);
         stato = NORM;
       }
-      else if (c=='\\'){
+      else if (c == '\\'){
+        c = getchar();
         putchar(c);
       }
       else {
