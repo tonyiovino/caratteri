@@ -6,6 +6,8 @@
 
    NORM       c=='"'              c             STRINGA
 
+   NORM       c=='''              c              APICE
+
 
   STRINGA     c=='"'              c              NORM
 
@@ -14,9 +16,14 @@
   STRINGA     c=='\'              c                -
 
 
+   APICE      c=='''              c              NORM
+
+   APICE      c=='\'              c                -
+
+
    SLASH      c=='*'              -             COMMENTO
 
-   SLASH      c!='*'            '/'+c              -
+   SLASH      c!='*'           '/'+ c              -
 
 
   COMMENTO    c=='*'              -            ASTERISCO
