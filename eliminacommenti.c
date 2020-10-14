@@ -40,7 +40,7 @@
 
 int main()
 {
-  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO, STRINGA, BACKSLASH };
+  enum Stato { NORM, SLASH, COMMENTO, ASTERISCO, STRINGA, BACKSLASH, APICE };
 
   int stato = NORM;
   int c;
@@ -55,6 +55,21 @@ int main()
       else if (c == '"'){
         putchar(c);
         stato = STRINGA;
+      }
+      else {
+        putchar(c);
+      }
+    }
+
+    /*APICE*/
+    if (stato == APICE){
+      if (c == '\''){
+        putchar(c);
+        stato = NORM;
+      }
+      else if (c == '\\'){
+        c = getchar();
+        putchar(c);
       }
       else {
         putchar(c);
