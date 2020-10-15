@@ -56,6 +56,10 @@ int main()
         putchar(c);
         stato = STRINGA;
       }
+      else if (c == '\''){
+        putchar(c);
+        stato = APICE;
+      }
       else {
         putchar(c);
       }
@@ -78,7 +82,7 @@ int main()
 
     /*STRINGA*/
     else if (stato == STRINGA){
-      if (c == '"'){
+      if (c == '\"'){
         putchar(c);
         stato = NORM;
       }
