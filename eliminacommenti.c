@@ -18,6 +18,8 @@
 
    APICE      c=='''              c              NORM
 
+   APICE      c!='''              c                -
+
    APICE      c=='\'              c                -
 
 
@@ -52,7 +54,7 @@ int main()
       if (c == '/'){
         stato = SLASH;
       }
-      else if (c == '"'){
+      else if (c == '\"'){
         putchar(c);
         stato = STRINGA;
       }
@@ -72,10 +74,11 @@ int main()
         stato = NORM;
       }
       else if (c == '\\'){
+        putchar(c);
         c = getchar();
         putchar(c);
       }
-      else {
+      else{
         putchar(c);
       }
     }
@@ -87,10 +90,11 @@ int main()
         stato = NORM;
       }
       else if (c == '\\'){
+        putchar(c);
         c = getchar();
         putchar(c);
       }
-      else {
+      else{
         putchar(c);
       }
     }
