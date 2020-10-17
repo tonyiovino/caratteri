@@ -68,7 +68,7 @@ int main()
     }
 
     /*APICE*/
-    if (stato == APICE){
+    else if (stato == APICE){
       if (c == '\''){
         putchar(c);
         stato = NORM;
